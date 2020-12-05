@@ -4,6 +4,7 @@ const ejs = require('ejs');
 const multer = require('multer');
 const path = require('path');
 const vFM = require('./videoFileManager');
+const { videoData } = require('./videoFileManager');
 
 //Initializing app
 const app = express();
@@ -54,11 +55,11 @@ function checkFileType(file, cb) {
     }
 }
 
-const videoData = { videos: vFM.videoFiles(), names: vFM.fileNames() };
-
 //setting up routes
 app.get('/', (req, res) => {
-    res.render('index', { data: videoData });
+    res.render('index', {
+        data: vFM.videoData,
+    });
 });
 
 app.post('/upload', (req, res) => {
@@ -66,13 +67,13 @@ app.post('/upload', (req, res) => {
         if (err) {
             res.render('index', {
                 msg: err,
-                data: videoData,
+                data: vFM.videoData,
             });
         } else {
             if (req.file == undefined) {
                 res.render('index', {
                     msg: 'Error: No File Selected',
-                    data: videoData,
+                    data: vFM.videoData,
                 });
             } else {
                 console.log(req.file);

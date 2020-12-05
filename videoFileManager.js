@@ -19,4 +19,6 @@ function fileNames() {
     return files;
 }
 
-module.exports = { videoFiles, fileNames, dirPath };
+const videoData = { videos: videoFiles(), names: fileNames() };
+
+module.exports = { videoFiles, fileNames, dirPath, videoData };
