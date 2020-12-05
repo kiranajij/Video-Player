@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="stylesheet" href="assets\style.css" />
+</head>
+
+<body>
+    <main class="container">
+        <h2>Local Video PLayer</h2>
+        <br />
+        <span style="color: aliceblue;"><%= typeof msg != 'undefined' ? msg: '' %></span>>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Choose Video</span>
+                    <input name="myVideo" type="file" />
+                </div>
+                <div class="file-path-wrapper">
+                    <input style="color: aliceblue" class="file-path validate" type="text" />
+                </div>
+            </div>
+            <button type="submit" class="btn">Upload Video</button>
+        </form>
+    </main>
+    <br />
+    <section class="container gallery">
+        <% for(let i=0; i< data.videos.length;i++){ %>
+        <div class="gallery-item">
+            <video src="<%= data.videos[i] %>"></video>
+            <label for="video"><%= data.names[i] %></label>
+        </div>
+        <% } %>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
