@@ -58,7 +58,7 @@ function checkFileType(file, cb) {
 //setting up routes
 app.get('/', (req, res) => {
     res.render('index', {
-        data: vFM.videoData,
+        data: vFM.videoData(),
     });
 });
 
@@ -67,13 +67,13 @@ app.post('/upload', (req, res) => {
         if (err) {
             res.render('index', {
                 msg: err,
-                data: vFM.videoData,
+                data: vFM.videoData(),
             });
         } else {
             if (req.file == undefined) {
                 res.render('index', {
                     msg: 'Error: No File Selected',
-                    data: vFM.videoData,
+                    data: vFM.videoData(),
                 });
             } else {
                 console.log(req.file);
