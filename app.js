@@ -83,6 +83,12 @@ app.post('/upload', (req, res) => {
     });
 });
 
+app.get('/video', (req, res) => {
+    res.render('player', {
+        data: { url: req.query.url, name: path.parse(req.query.url).name },
+    });
+});
+
 //listen to port
 const port = 4000;
 app.listen(port, () => {

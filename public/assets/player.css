@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(13, 49, 97);
+    padding: 15px 0px;
+}
+
+#back {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: red;
+    background-color: yellow;
+    padding: 5px;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 30px;
+    border: 5px outset red;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.header {
+    text-align: center;
+    font-size: 25px;
+    line-height: 45px;
+    color: white;
+    text-shadow: 5px 5px 5px black;
+    border: 3px dashed white;
+    width: 70%;
+    margin: 0px auto;
+}
+
+.vid-box {
+    width: 100%;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#video {
+    width: 70%;
+}

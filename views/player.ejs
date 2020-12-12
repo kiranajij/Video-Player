@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Playing <%= data.name %></title>
+        <link rel="stylesheet" href="assets\player.css" />
+    </head>
+
+    <body>
+        <a id="back" href="/">Go Back</a>
+        <h1 class="header">Now playing - <%= data.name%></h1>
+        <section class="vid-box">
+            <video id="video" src="<%= data.url %>" controls></video>
+        </section>
+    </body>
+</html>

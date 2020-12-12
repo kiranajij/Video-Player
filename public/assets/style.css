@@ -5,6 +5,7 @@
 
 body {
     background-color: rgb(7, 25, 49);
+    padding-bottom: 40px;
 }
 
 .container h2 {
@@ -42,4 +43,12 @@ body {
 
 .gallery-item video {
     width: 100%;
+}
+
+.gallery-item video:hover {
+    cursor: pointer;
+}
+
+.gallery-item p {
+    color: white;
 }
